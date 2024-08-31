@@ -84,5 +84,21 @@
   }
   body {
     @apply bg-background text-foreground;
+    min-height: 100vh;
+    /* Use dvh for iOS to account for the dynamic viewport height */
+    min-height: 100dvh;
+  }
+}
+
+/* Ensure full height on iOS devices */
+html, body {
+  height: 100%;
+}
+
+/* Fix for iOS Safari's search bar */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* Disable overscroll behavior */
+    overscroll-behavior-y: none;
   }
 }

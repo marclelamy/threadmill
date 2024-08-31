@@ -52,14 +52,14 @@ const RunChart: React.FC<RunChartProps> = ({ data, maxTime }) => {
                     accessibilityLayer
                     data={data}
                     margin={{
-                        top: 10,
-                        right: 30,
+                        top: 0,
+                        right: 0,
                         left: 0,
                         bottom: 0,
                     }}
                 >
                     <CartesianGrid vertical={false} />
-                    <XAxis
+                    {/* <XAxis
                         dataKey="time"
                         tickLine={false}
                         axisLine={false}
@@ -71,15 +71,17 @@ const RunChart: React.FC<RunChartProps> = ({ data, maxTime }) => {
                             return `${value}s`
                         }}
                         domain={[0, maxTime]}
+                        className="absolute"
                     />
                     <YAxis
                         dataKey="distance"
                         tickLine={false}
                         axisLine={false}
-                        tickMargin={8}
+                        tickMargin={0}
                         tickFormatter={(value) => `${value.toFixed(2)}mi`}
                         domain={[0, maxDistance]}
-                    />
+                        className="absolute"
+                    /> */}
                     <ChartTooltip
                         cursor={false}
                         content={<ChartTooltipContent indicator="dot" />}
